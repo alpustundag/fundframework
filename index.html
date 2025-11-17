@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRV0JVTY6Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XRV0JVTY6Q');
+</script>
   <meta charset="UTF-8" />
   <title>Agentic Multi-Layer Trading Architecture | NaviMod</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -478,10 +486,65 @@
       letter-spacing: 0.05em;
     }
 
+    /* Home Button Style - Updated for Theme */
+    .home-button {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(15, 31, 53, 0.9); /* --bg-card with alpha */
+      border: 1px solid var(--border-bright);
+      color: var(--text-muted); /* Icon color */
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .home-button:hover {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+      color: var(--bg-main); /* Dark icon on bright bg */
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 0 24px var(--accent-glow);
+    }
+
+    .home-button svg {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2.5;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
     /* Responsive improvements */
     @media (max-width: 860px) {
       .page {
         padding: 40px 20px 60px;
+      }
+      
+      /* Make space for home button on mobile */
+      header {
+        margin-top: 40px;
+      }
+
+      .home-button {
+        top: 16px;
+        left: 16px;
+        width: 42px;
+        height: 42px;
+      }
+
+      .home-button svg {
+        width: 18px;
+        height: 18px;
+        stroke-width: 2.5;
       }
 
       h1 {
@@ -523,6 +586,14 @@
   </style>
 </head>
 <body>
+
+  <a href="https://alpustundag.github.io/" class="home-button" aria-label="Ana Sayfa">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+  </a>
+
   <div class="page">
     <header>
       <div class="logo-pill">
